@@ -129,7 +129,7 @@ class User < ApplicationRecord
 
     #return matching_follow_requests
   #end
-
+  #has_many(:accepted_sent_follow_requests,through:"sent_follow_requests",source:"sender")
   def accepted_sent_follow_requests
     my_sent_follow_requests = self.sent_follow_requests
 
@@ -137,7 +137,7 @@ class User < ApplicationRecord
 
     return matching_follow_requests
   end
-
+  #has_many(:accepted_received_follow_requests,through:"received_follow_requests",source:"sender")
   def accepted_received_follow_requests
     my_received_follow_requests = self.received_follow_requests
 
